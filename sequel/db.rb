@@ -50,3 +50,25 @@ puts "avg movie rating #{movies.avg(:rating)}"
 
 
 
+# passed: database, rating direction 
+# return: db in order based on direction 
+def order_by_rating(db, direction)
+    if direction == 'min'
+        return db.order(:rating, :title)
+    else
+        return db.order(Sequel.desc(:rating), :title)
+    end
+end
+
+puts "\n"
+puts "MIN:"
+order_by_rating(movies, 'min').each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+puts "\n"
+puts "MAX:"
+order_by_rating(movies, 'max').each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+    
+
+
+
