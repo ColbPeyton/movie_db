@@ -69,6 +69,31 @@ puts "MAX:"
 order_by_rating(movies, 'max').each{|row| puts "#{row[:title]} #{row[:rating]}"}
 
     
+puts "\n"
 
 
+# passed: database, rating
+# returned: rows from db that match passed rating value
+def get_all_of_rating(db, rating)
+    return db.where(Sequel.like(:rating, rating))
+end
 
+puts "\n"
+puts "1* Movies: "
+get_all_of_rating(movies, 1).each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+puts "\n"
+puts "2* Movies: "
+get_all_of_rating(movies, 2).each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+puts "\n"
+puts "3* Movies: "
+get_all_of_rating(movies, 3).each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+puts "\n"
+puts "4* Movies: "
+get_all_of_rating(movies, 4).each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+puts "\n"
+puts "5* Movies: "
+get_all_of_rating(movies, 5).each{|row| puts "#{row[:title]} #{row[:rating]}"}
