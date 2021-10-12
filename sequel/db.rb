@@ -1,4 +1,6 @@
 require 'sequel'
+require 'csv'
+
 
 DB = Sequel.sqlite 
 
@@ -22,25 +24,24 @@ movies = DB[:movies]
  0 - didn't finish   
 =end
 
+# get data from csv, store in hash
+def get_data(path)
+    data = []
+    CSV.foreach(path, headers: true, col_sep: ",", header_converters: :symbol) do |row|
+        data << row.to_h
+    end
+    return data
+end
 
-total_movies = [
-    {:title => "WNUF Halloween Special", :rating => 5 , :date_watched => "10/2/2021", :times_watched => 1},
-    {:title => "RiffTrax: Blood Theater", :rating => 5, :date_watched => "10/4/2021", :times_watched => 1},
-    {:title => "RiffTrax: Astro-Zombies", :rating => 1, :date_watched => "10/5/2021", :times_watched => 1},
-    {:title => "Killer Sofa", :rating => 3, :date_watched => "10/5/2021", :times_watched => 1},
-    {:title => "A Chinese Ghost Story", :rating => 3, :date_watched => "10/6/2021", :times_watched => 1},
-    {:title => "Drive Thru", :rating => 2, :date_watched => "10/7/2021", :times_watched => 1},
-    {:title => "Death Machine", :rating => 3, :date_watched => "10/8/2021", :times_watched => 1},
-    {:title => "Dolls", :rating => 4, :date_watched => "10/8/2021", :times_watched => 1},
-    {:title => "V/H/S/94", :rating => 4, :date_watched => "10/9/2021", :times_watched => 1},
-    {:title => "Z-O-M-B-I-E (Japanese dubs / no subs)", :rating => 5, :date_watched => "10/9/2021", :times_watched => 1 }
-]
+total_movies = get_data("sequel/movies.csv")
+
 
 def generate_db_items(db, total_movies)
     for movie in total_movies
         db.insert(movie)
     end
 end
+
 
 generate_db_items(movies, total_movies)
 
