@@ -10,6 +10,7 @@ DB.create_table :movies do
     Number :rating
     String :date_watched
     Number :times_watched
+    String :genre
 end
 
 movies = DB[:movies]
@@ -33,7 +34,7 @@ def get_data(path)
     return data
 end
 
-total_movies = get_data("sequel/movies.csv")
+total_movies = get_data("db/movies.csv")
 
 
 def generate_db_items(db, total_movies)
@@ -48,7 +49,6 @@ generate_db_items(movies, total_movies)
 puts "movie count: #{movies.count}"
 
 puts "avg movie rating #{movies.avg(:rating)}"
-
 
 
 # passed: database, rating direction 
@@ -98,3 +98,16 @@ get_all_of_rating(movies, 4).each{|row| puts "#{row[:title]} #{row[:rating]}"}
 puts "\n"
 puts "5* Movies: "
 get_all_of_rating(movies, 5).each{|row| puts "#{row[:title]} #{row[:rating]}"}
+
+
+puts "\n"
+def get_all_movies(db)
+    db.all
+end
+
+
+puts get_all_movies(movies)
+# {:id=>1, :title=>"WNUF Halloween Special", :rating=>5, :date_watched=>"10/2/2021", :times_watched=>1, :genre=>"horror"}
+# {:id=>2, :title=>"RiffTrax: Blood Theater", :rating=>5, :date_watched=>"10/4/2021", :times_watched=>1, :genre=>"horror"}
+# ...
+
