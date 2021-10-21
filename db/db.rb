@@ -111,3 +111,22 @@ puts get_all_movies(movies)
 # {:id=>2, :title=>"RiffTrax: Blood Theater", :rating=>5, :date_watched=>"10/4/2021", :times_watched=>1, :genre=>"horror"}
 # ...
 
+
+puts "\n"
+
+def get_all_of_genre(db, genre_name)
+    db.where(genre: genre_name)
+end
+
+get_all_of_genre(movies, 'horror').each{|row| puts "#{row[:title]} #{row[:genre]}"}
+=begin
+WNUF Halloween Special horror
+RiffTrax: Blood Theater horror
+Rifftrax: Frankenstein Island horror
+RiffTrax: Astro Zombies horror
+Killer Sofa horror
+A Chinese Ghost Story horror
+Drive Thru horror
+=end
+
+puts "\n"
