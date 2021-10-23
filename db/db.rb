@@ -130,3 +130,13 @@ Drive Thru horror
 =end
 
 puts "\n"
+
+puts "get all of genre and rating"
+get_all_of_genre(get_all_of_rating(movies, 2), 'horror').each{|row| puts "#{row[:title]} #{row[:genre]}  #{row[:rating]}"}
+=begin
+Killer Sofa horror  2
+Drive Thru horror  2
+RiffTrax: Bloody Pit of Horror horror  2
+RiffTrax: MANOS The Hands of Fate horror  2
+The VelociPastor horror  2
+=end
