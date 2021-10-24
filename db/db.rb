@@ -140,3 +140,26 @@ RiffTrax: Bloody Pit of Horror horror  2
 RiffTrax: MANOS The Hands of Fate horror  2
 The VelociPastor horror  2
 =end
+
+puts "\n"
+puts "alphabetical order"
+def order_alphabetical(db)
+    db.order(:title)
+end
+
+order_alphabetical(movies).each{|row| puts "#{row[:title]}"}
+
+
+puts "\n"
+puts "return only titles"
+# select only title column
+def get_all_titles(db)
+    db.select(:title)
+end
+
+get_all_titles(movies).each{|row| puts "#{row[:title]}"}
+
+
+puts "\n"
+puts "titles alphabetical order"
+get_all_titles(order_alphabetical(movies)).each{|row| puts "#{row[:title]}"}
