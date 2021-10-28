@@ -1,7 +1,7 @@
 title,rating,date_watched,times_watched,genre
 WNUF Halloween Special,5,10/2/2021,1,"horror"
 RiffTrax: Blood Theater,5,10/4/2021,1,"horror"
-Rifftrax: Frankenstein Island,-1,10/5/2021,1,"horror"
+Rifftrax: Frankenstein Island,-1,10/5/2021,0,"horror"
 RiffTrax: Astro Zombies,1,10/5/2021,1,"horror"
 Killer Sofa,2,10/5/2021,1,"horror"
 A Chinese Ghost Story,3,10/6/2021,1,"horror"
@@ -35,3 +35,4 @@ In The Mouth Of Madness,4,10/24/2021,1,"horror"
 RiffTrax: Contamination,4,10/24/2021,1,"horror"
 Big Top Evil,0,10/25/2021,1,"horror"
 Transylvania 6-5000,4,10/26/2021,1,"horror comedy"
+Edge of the axe,-1,10/27/2021,0,"horror"
