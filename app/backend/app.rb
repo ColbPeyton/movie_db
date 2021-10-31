@@ -5,9 +5,10 @@ get '/list/complete' do
   "complete list of movies"
 end
 
-# matches "GET /list/sort?direction=acc"
+# matches "GET /list/sort?direction=acc&prop=raiting"
 get '/list/sort' do
   direction = params['direction']
+  prop = params['prop']
 end
 
 # matches "GET /list/title?movie_id=12"
