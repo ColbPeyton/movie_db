@@ -5,7 +5,7 @@ get '/list/complete' do
   "complete list of movies"
 end
 
-# matches "GET /list/sort?direction=up"
+# matches "GET /list/sort?direction=acc"
 get '/list/sort' do
   direction = params['direction']
 end

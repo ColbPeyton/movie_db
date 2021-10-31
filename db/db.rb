@@ -54,7 +54,7 @@ puts "avg movie rating #{movies.avg(:rating)}"
 # passed: database, rating direction 
 # return: db in order based on direction 
 def order_by_prop(db, direction, prop)
-    if direction == 'min'
+    if direction == 'desc'
         return db.order(prop.to_sym, :title)
     else
         return db.order(Sequel.desc(prop.to_sym), :title)
@@ -157,16 +157,16 @@ get_all_titles(order_alphabetical(movies)).each{|row| puts "#{row[:title]}"}
 
 
 
-puts "MIN Rating:"
-order_by_prop(movies, 'min', 'rating').each{|row| puts "#{row[:title]} #{row[:rating]}"}
+puts "Desc Rating:"
+order_by_prop(movies, 'desc', 'rating').each{|row| puts "#{row[:title]} #{row[:rating]}"}
 puts "\n"
-puts "MAX Rating:"
-order_by_prop(movies, 'max', 'rating').each{|row| puts "#{row[:title]} #{row[:rating]}"}  
+puts "Acc Rating:"
+order_by_prop(movies, 'acc', 'rating').each{|row| puts "#{row[:title]} #{row[:rating]}"}  
 puts "\n"
 
-puts "MIN Watched:"
-order_by_prop(movies, 'min', 'times_watched').each{|row| puts "#{row[:title]} #{row[:times_watched]}"}
+puts "Min Watched:"
+order_by_prop(movies, 'desc', 'times_watched').each{|row| puts "#{row[:title]} #{row[:times_watched]}"}
 puts "\n"
-puts "MAX Watched:"
-order_by_prop(movies, 'max', 'times_watched').each{|row| puts "#{row[:title]} #{row[:times_watched]}"}  
+puts "Max Watched:"
+order_by_prop(movies, 'acc', 'times_watched').each{|row| puts "#{row[:title]} #{row[:times_watched]}"}  
 puts "\n"
