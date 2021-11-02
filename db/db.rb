@@ -22,7 +22,8 @@ movies = DB[:movies]
  3 - overall good
  2 - okay
  1 - bad
- 0 - didn't finish   
+ 0 - very bad  
+ -1 - didn't finish   
 =end
 
 # get data from csv, store in hash
@@ -170,3 +171,13 @@ puts "\n"
 puts "Max Watched:"
 order_by_prop(movies, 'acc', 'times_watched').each{|row| puts "#{row[:title]} #{row[:times_watched]}"}  
 puts "\n"
+
+
+def get_random(db)
+    movies = get_all_movies(db)
+    random = rand(db.count) - 1
+    movies[random]
+end
+
+puts "Random Movie"
+puts get_random(movies)[:title]
