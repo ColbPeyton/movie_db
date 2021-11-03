@@ -181,3 +181,9 @@ end
 
 puts "Random Movie"
 puts get_random(movies)[:title]
+
+
+def update_rating(db, title, rating)
+    db.where(Sequel[:title], title ).update(:raiting => rating)
+end
+
