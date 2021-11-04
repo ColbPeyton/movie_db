@@ -183,7 +183,7 @@ puts "Random Movie"
 puts get_random(movies)[:title]
 
 
-def update_rating(db, title, rating)
-    db.where(Sequel[:title], title ).update(:raiting => rating)
+def update_prop(db, title, prop_type, prop_value )
+    db.where(Sequel[:title], title ).update(prop_type.to_sym, => prop_value)
 end
 
