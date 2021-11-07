@@ -9,7 +9,7 @@ DB.create_table :movies do
     String :title
     Number :rating
     String :date_watched
-    Number :times_watched
+    String :times_watched
     String :genre
 end
 
