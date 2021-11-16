@@ -6,11 +6,12 @@ DB = Sequel.sqlite
 
 DB.create_table :movies do
     primary_key :id
-    String :title
-    Number :rating
-    String :date_watched
-    String :times_watched
-    String :genre
+    String      :title
+    Number      :rating
+    String      :date_watched
+    String      :times_watched
+    String      :genre
+    String      :trippy
 end
 
 movies = DB[:movies]
