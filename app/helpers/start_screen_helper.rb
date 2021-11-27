@@ -1,0 +1,2 @@
+module StartScreenHelper
+end

@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Colby's Movie Ratings</a>
+    <%= link_to "Colby's Movie Ratings", "/home", class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Search</a>
+                <%= link_to "Search", "/search", class: "nav-item nav-link active" %>
             </div>
         </div>
-        <% @catagory.present? %>
+        <% if @catagory.present? %>
             <span class="navbar-text"><%= @catagory %></span>
         <% end %>
     </div>
