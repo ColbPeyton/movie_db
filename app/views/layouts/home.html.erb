@@ -13,6 +13,8 @@
 
   <body>
     <%= render(NavBar::BarComponent.new(title: 'Navabr')) %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
