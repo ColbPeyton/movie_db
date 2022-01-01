@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  rating: 1
+  date_watched: 2022-01-01
+  times_watched: MyString
+  genre: MyString
+  tv_show: false
+
+two:
+  title: MyString
+  rating: 1
+  date_watched: 2022-01-01
+  times_watched: MyString
+  genre: MyString
+  tv_show: false
