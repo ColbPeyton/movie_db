@@ -1,7 +1,1 @@
-<h1><%= @movie.title %></h1>
-
-<p><%= @movie.rating %></p>
-<p><%= @movie.date_watched %></p>
-<p><%= @movie.times_watched %></p>
-<p><%= @movie.genre %></p>
-<p><%= @movie.tv_show %></p>
+<%= render(Movie::MovieComponent.new(movie: @movie)) %>
