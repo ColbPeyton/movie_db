@@ -1,5 +1,12 @@
-<li class="list-group-item">
-    <h5><%=@title %></h5>
-    <p><%=@rating %></p>
-</li>
-
+<div class="card col-3" style="width: 18rem; margin:5px;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">
+        <%= @title %>
+    </h5>
+    <p class="card-text">
+        <%= @genre %>
+    </p>
+    <a href=<%= @link %> class="btn btn-primary">See Rating</a>
+  </div>
+</div>
