@@ -23,7 +23,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem "view_component"
+
 gem 'view_component_reflex'
+
+gem 'sequel'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
