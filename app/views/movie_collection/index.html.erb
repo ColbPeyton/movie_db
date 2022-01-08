@@ -7,7 +7,7 @@
 <h1>All Movies</h1>
 
 <div class="container-fluid">
-  <%= render MovieCollection::FilterComponent.new  %>
+  
   <div class="row justify-content-center row-cols-2">
     <%= render MovieCollection::ListItemComponent.with_collection @movies %>
   </div>

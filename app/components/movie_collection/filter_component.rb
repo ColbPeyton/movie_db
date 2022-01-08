@@ -1,10 +1,3 @@
-class MovieCollection::FilterComponent < ViewComponentReflex::Component
-    def initialize
-        @term = ''
-    end
+class MovieCollection::FilterComponent < ViewComponent::Base
 
-    def filter_based_on_term
-        @term = element.value
-        p MovieInfo.where(:genre => @term)
-    end
 end

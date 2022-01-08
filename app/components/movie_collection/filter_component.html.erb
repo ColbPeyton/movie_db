@@ -1,26 +1,11 @@
-<%= component_controller do %>
-    <div class='container'>
-        <div class="row justify-content-center">
-            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <%= reflex_tag\
-                    :filter_based_on_term, 
-                    :button, 
-                    "Action"
-                    value='action'
-                %>
-                <%= reflex_tag\
-                    :filter_based_on_term, 
-                    :button, 
-                    "Comedy"
-                    value='comedy'
-                %>
-                <%= reflex_tag\
-                    :filter_based_on_term, 
-                    :button, 
-                    "Horror"
-                    value='horror'
-                %>
-            </div>
+<div class='container'>
+    <div class="row justify-content-center">
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <button
+            data-reflex="click->Filter#filter_based_on_term"
+            value="action"
+            >Action</button>
+
         </div>
     </div>
-<% end %>
+</div>

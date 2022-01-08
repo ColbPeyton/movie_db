@@ -2,6 +2,7 @@ class MovieCollectionController < ApplicationController
     layout "home"
 
     def index
+        MovieInfo.connection
         @movies = MovieInfo.all
     end
 
