@@ -3,6 +3,7 @@
         <h1>Colby's Movie Ratings</h1>
     </div>
     <div class="start-body">
+      <%= render MovieCollection::FilterComponent.new %>
         <p>Hello. Welcome to Colby's Movie Ratings.</p>
         <%= link_to "View movie ratings ", "/collection", class: "btn btn-primary btn-lg" %>
     </div>
